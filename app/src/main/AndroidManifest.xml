@@ -19,7 +19,8 @@
         <activity
             android:name=".GuessPageActivity"
             android:label="@string/title_activity_guess_page"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ResultingActivity"></activity>
     </application>
 
 </manifest>

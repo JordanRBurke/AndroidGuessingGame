@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         startButton = findViewById(R.id.start_button);
-        submitButton = findViewById(R.id.start_button);
+//        submitButton = findViewById(R.id.start_button);
         sendMessage();
 
     }

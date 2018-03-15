@@ -50,7 +50,7 @@ public class GuessPageActivity extends AppCompatActivity {
                 checkGuess(userGuess);
                 int guess = Integer.parseInt(guessText.getText().toString());
                 if (guess > 100) {
-                    clueTextView.setText("Enter a valid number between 1 - 100!");
+                    clueTextView.setText(R.string.no_recognized_number_error);
                     clueTextView.setVisibility(View.VISIBLE);
                     guessText.setText("");
 
@@ -72,7 +72,7 @@ public class GuessPageActivity extends AppCompatActivity {
             System.out.println("Sorry you have ran out of chances. The correct number was " + generatedNumber);
             numberOfGuesses++;
         } else if (userGuess < generatedNumber) {
-           clueTextView.setText("Higher");
+           clueTextView.setText(R.string.response_guess_higher);
            clueTextView.setVisibility(View.VISIBLE);
            guessText.setText("");
             numberOfGuesses++;
