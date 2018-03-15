@@ -29,9 +29,8 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//
                 Intent thisIntent = new Intent(MainActivity.this, GuessPageActivity.class);
-//                thisIntent.putExtra("key", value); //Optional parameters
+//                thisIntent.putExtra();
                 MainActivity.this.startActivity(thisIntent);
             }
         }
