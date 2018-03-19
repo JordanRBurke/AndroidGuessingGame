@@ -30,7 +30,7 @@ public class ResultingActivity extends AppCompatActivity {
         playAgainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
             }
         });
     }
