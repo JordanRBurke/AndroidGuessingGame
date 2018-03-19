@@ -1,5 +1,6 @@
 package com.jordanburke.guessinggame;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -40,14 +41,15 @@ public class GuessPageActivity extends AppCompatActivity {
         generatedNumber = (int) Math.ceil(Math.random() * 100);
 
 
+
     }
 
     private void listenForButtonClick() {
         textSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int userGuess = Integer.parseInt(clueTextView.getText().toString());
-                checkGuess(userGuess);
+//                int userGuess = Integer.parseInt(guessText.getText().toString());
+//                checkGuess(userGuess);
                 int guess = Integer.parseInt(guessText.getText().toString());
                 if (guess > 100) {
                     clueTextView.setText(R.string.no_recognized_number_error);
@@ -55,7 +57,7 @@ public class GuessPageActivity extends AppCompatActivity {
                     guessText.setText("");
 
                 } else {
-                    checkGuess(userGuess);
+                    checkGuess(guess);
                 }
 
 
@@ -66,9 +68,14 @@ public class GuessPageActivity extends AppCompatActivity {
     private void checkGuess(int userGuess) {
         if (userGuess == generatedNumber) {
             // TODO - Create intent to go to winning activity
+            Intent winner = new Intent(this, GuessPageActivity.class);
+            startActivity(winner);
             System.out.println("You have guessed the correct number");
         } else if (numberOfGuesses == MAX_GUESS_COUNT) {
             // TODO - Create intent to go to winning activity - handle out of chances
+            Intent loser = new Intent(this, GuessPageActivity.class);
+            loser.putExtra("WINNING_NUMBER", generatedNumber);
+            startActivity(loser);
             System.out.println("Sorry you have ran out of chances. The correct number was " + generatedNumber);
             numberOfGuesses++;
         } else if (userGuess < generatedNumber) {

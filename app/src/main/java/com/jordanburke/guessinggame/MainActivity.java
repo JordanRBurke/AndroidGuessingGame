@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+
+
     public void sendMessage() {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
